@@ -1,0 +1,9 @@
+runfft script run started on Fri May 11 14:39:36 2018
+run on machine coe-ee-cad50.sjsuad.sjsu.edu
+
+Run with a clock period of 3.0
+options syn False gates False
+VCS simulation worked
+NCverilog simulation worked
+Synthesis finished OK
+Gates finished OK

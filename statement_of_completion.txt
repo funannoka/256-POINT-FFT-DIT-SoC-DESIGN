@@ -1,0 +1,12 @@
+For the design of this project, I first designed the individual modules, including the top level fft module, the twiddle factor module generated using python, and a working state machine module that sends the data sets to the butterfly and stores the result. Each individual module was tested for crrect functionality.
+
+When it came to testing the design with the testbench, the first problem I encountered was that I overran the clock and wasnt getting to the 8th stage fast enough, I tried various things and battled with this error for a long while. I later found that I was supposed to calculate more than one pair of butterflies at a time. 
+
+Once, I started getting data out, I was faced with yet another error of not getting out the correct data, I always seemed to be off by 4. Unfortunately, I was stuck at this point for a long while too, tried so many not so clever rounding schemes to no avail. Tried just truncating but that was never going to work, tried rounding half up, rounding to and from zero, then tried convergent rounding (rounding half to even) this got me the farthest in the test cases but still didnt entirely pass the test.
+ It wasn't until I was going through my notes while preparing for the comprehensive exam that I noticed professor said to round the final multiplied result before loosing the bits. Before this I was only rounding the final result after I had truncated the multiplies and done the sum, this got me way over or way under the expected results.
+ 
+With this knowledge I rounded negative numbers to zero and positive numbers away from zero, then rounded up the sum again. After adjusting my design I finally passed the test and was able to synthesize only 2 days before the project was due. 
+
+My synthesis took several hours to complete each time and always ended with an error of disk quota exceeded when it got to simulating at gate level, even though I deleted most documents to make room it just wasnt enough. This project has been the most challenging for me thus far, and even though I wasnt able to complete it perfectly It has been a good learning experience.
+
+
